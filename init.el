@@ -63,6 +63,10 @@
   (setq ranger-cleanup-eagerly t)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Load custom modules ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "/home/oblivia/.emacs.d/configs")
 ;;; For SLIME stuff
 (require 'slime-config)
 
