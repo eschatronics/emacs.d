@@ -4,6 +4,19 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 (require 'package)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (badwolf)))
+ '(custom-safe-themes
+   (quote
+    ("604648621aebec024d47c352b8e3411e63bdb384367c3dd2e8db39df81b475f5" default)))
+ '(package-selected-packages
+   (quote
+    (avy ranger swiper rainbow-mode org-edna badwolf-theme slime ivy which-key general evil use-package))))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-to-list 'package-archives
 	     '("melpa-stable" . "http://melpa.org/packages/"))
@@ -22,34 +35,40 @@
 	     :init
 	     (evil-mode)
 	     :config
+
+	     (setq evil-want-fine-undo 'fine)
+
 	     (define-key
 		evil-normal-state-map (kbd "u")
 		'undo-tree-visualize)
 	     )
 
 
-(use-package ivy :ensure t)
+(use-package ivy :ensure t
+  :diminish (ivy-mode . "") ; does not display ivy in the modeline
+  :init (ivy-mode 1)        ; enable ivy globally at startup
+  :bind (:map ivy-mode-map  ; bind in the ivy buffer
+         ("C-'" . ivy-avy)) ; C-' to ivy-avy
+  :config
+  (setq ivy-use-virtual-buffers t)   ; extend searching to bookmarks and …
+  (setq ivy-height 20)               ; set height of the ivy window
+  (setq ivy-count-format "(%d/%d) ") ; count format, from the ivy help page
+  )
 
-;; SLIME Stuff
-(use-package slime :ensure t)
 
-(add-hook 'lisp-mode-hook
-	  (lambda ()
-	    (progn
-	      (slime-mode t))))
+(use-package ranger :ensure t
+  :commands (ranger)
+  :bind (("C-x d" . deer))
+  :config
+  (setq ranger-cleanup-eagerly t)
+  )
 
-(add-hook 'slime-mode-hook
-	  (lambda ()
-	    (progn
-	      ;; So that M-. works in normal mode, too.
-	      (define-key
-		evil-normal-state-map (kbd "M-.")
-		'slime-edit-definition))))
+;;; For SLIME stuff
+(require 'slime-config)
 
-(setq inferior-lisp-program "sbcl")
+;;; Use emacs' own eww browser for browsing the web
+(setq browse-url-browser-function 'eww-browse-url)
 
-(setq slime-contribs '(slime-fancy))
-;;;;
 
 (show-paren-mode) ; highlight delimiters
 (line-number-mode) ; display line number in mode line
@@ -65,18 +84,7 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (badwolf)))
- '(custom-safe-themes
-   (quote
-    ("604648621aebec024d47c352b8e3411e63bdb384367c3dd2e8db39df81b475f5" default)))
- '(package-selected-packages
-   (quote
-    (swiper rainbow-mode org-edna badwolf-theme slime ivy which-key general evil use-package))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
