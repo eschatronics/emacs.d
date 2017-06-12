@@ -67,9 +67,11 @@
 ;; Load custom modules ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "/home/oblivia/.emacs.d/configs")
+(add-to-list 'load-path "/home/oblivia/.emacs.d/langs")
 ;;; For SLIME stuff
 (require 'slime-config)
-
+;;; for NASL
+(require 'nasl-mode)
 ;;; Use emacs' own eww browser for browsing the web
 (setq browse-url-browser-function 'eww-browse-url)
 
