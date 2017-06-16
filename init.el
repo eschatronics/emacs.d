@@ -9,13 +9,16 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
  '(custom-enabled-themes (quote (badwolf)))
  '(custom-safe-themes
    (quote
     ("604648621aebec024d47c352b8e3411e63bdb384367c3dd2e8db39df81b475f5" default)))
  '(package-selected-packages
    (quote
-    (avy ranger swiper rainbow-mode org-edna badwolf-theme slime ivy which-key general evil use-package))))
+    (avy ranger swiper rainbow-mode org-edna badwolf-theme slime ivy which-key general evil use-package)))
+ '(show-paren-mode t)
+ '(tool-bar-mode nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-to-list 'package-archives
@@ -89,11 +92,11 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-
+(setq-default line-spacing 2) ;; little space between the lines
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight normal :height 143 :width normal)))))
