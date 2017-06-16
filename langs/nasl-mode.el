@@ -680,7 +680,8 @@
 (define-derived-mode nasl-mode prog-mode "NASL"
  "Support for the Nessus Attack Scripting Language."
  (set (make-local-variable 'font-lock-defaults) '(nasl--build-font-lock-keywords))
- (setq indent-tabs-mode nil))
+ (setq indent-tabs-mode nil)
+ (setq tab-width 2))
 
 (add-to-list 'auto-mode-alist (cons "\\.inc$" 'nasl-mode))
 (add-to-list 'auto-mode-alist (cons "\\.nasl$" 'nasl-mode))

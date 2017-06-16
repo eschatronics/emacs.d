@@ -69,8 +69,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load custom modules ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "/home/oblivia/.emacs.d/configs")
-(add-to-list 'load-path "/home/oblivia/.emacs.d/langs")
+(add-to-list 'load-path "/root/.emacs.d/configs")
+(add-to-list 'load-path "/root/.emacs.d/langs")
 ;;; For SLIME stuff
 (require 'slime-config)
 ;;; for NASL
@@ -82,7 +82,7 @@
 (show-paren-mode) ; highlight delimiters
 (line-number-mode) ; display line number in mode line
 (column-number-mode) ; display colum number in mode line
-(save-place-mode)    ; save cursor position between sessions
+;;(save-place-mode)    ; save cursor position between sessions
 
 (global-auto-revert-mode t)
 
