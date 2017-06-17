@@ -69,8 +69,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Load custom modules ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
-(add-to-list 'load-path "/root/.emacs.d/configs")
-(add-to-list 'load-path "/root/.emacs.d/langs")
+(add-to-list 'load-path "~/.emacs.d/configs")
+(add-to-list 'load-path "~/.emacs.d/langs")
 ;;; For SLIME stuff
 (require 'slime-config)
 ;;; for NASL
