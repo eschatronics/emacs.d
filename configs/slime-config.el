@@ -21,7 +21,12 @@
 		  'slime-edit-definition))))
 
   (global-set-key (kbd "C-,") 'slime-selector)
+
+  (setq slime-lisp-implementations
+	'((ccl ("ccl"))
+	  (sbcl ("sbcl"))
+	  
+	  ))
   
-  (setq inferior-lisp-program "sbcl"
-	slime-contribs '(slime-fancy)
+  (setq slime-contribs '(slime-fancy)
 	slime-startup-animation t))

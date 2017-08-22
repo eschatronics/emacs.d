@@ -16,7 +16,7 @@
     ("604648621aebec024d47c352b8e3411e63bdb384367c3dd2e8db39df81b475f5" default)))
  '(package-selected-packages
    (quote
-    (avy ranger swiper rainbow-mode org-edna badwolf-theme slime ivy which-key general evil use-package)))
+    (cider rust-playground rust-mode avy ranger swiper rainbow-mode org-edna badwolf-theme slime ivy which-key general evil use-package)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -71,10 +71,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 (add-to-list 'load-path "~/.emacs.d/configs")
 (add-to-list 'load-path "~/.emacs.d/langs")
+(add-to-list 'load-path "~/.emacs.d/hotkeys")
 ;;; For SLIME stuff
 (require 'slime-config)
 ;;; for NASL
 (require 'nasl-mode)
+;; for extra org stuff
+(require 'org-config)
+
+(require 'hotkeys)
+
 ;;; Use emacs' own eww browser for browsing the web
 (setq browse-url-browser-function 'eww-browse-url)
 
@@ -87,6 +93,7 @@
 (global-auto-revert-mode t)
 
 (global-linum-mode 1)
+(setq linum-format "%d ")
 
 ;; Aesthetics
 (menu-bar-mode -1)
