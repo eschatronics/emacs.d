@@ -1,0 +1,128 @@
+cd quicklisp/
+find ./ -name system-index.txt
+cat *
+cat local-projects/system-index.txt 
+rm local-projects/system-index.txt 
+cat local-projects/system-index.txt 
+ls local-projects/cl-unicorn/
+cat local-projects/cl-unicorn/unicorn.asd
+diff local-projects/cl-unicorn/unicorn.asd local-projects/cl-unicorn/cl-unicorn.asd 
+cat local-projects/cl-unicorn/unicorn.asd
+rm local-projects/cl-unicorn/unicorn.lisp
+cd local-projects/cl-unicorn/
+ls
+git pull
+git pull origin master
+ls
+git stash
+git pull
+git remote
+git remote set origin git@github.com:oblivia-simplex/cl-unicorn
+git remote set-url origin git@github.com:oblivia-simplex/cl-unicorn
+git pull
+git pull origin
+git pull origin master
+ls
+cat unicorn.lisp
+diff unicorn.lisp \#unicorn.lisp\#
+ls
+rm unicorn.asd
+(setq inferior-lisp-program "ccl")
+ls
+cd
+ls
+cd quicklisp/
+ls
+cd ..
+cat .sbclrc
+cat .sbclrc >> .cclrc
+ccl
+rm .cclrc
+ccl
+ls
+./make.sh 
+cd samples/
+make clean 
+ls
+make all
+ls
+./sample_armeb
+ls
+grep "uc_hook_del" *.c
+grep "uc_hook_add" *.c
+./mem_apis 
+find-file mem_apis.o
+find-file mem_apis.c
+make clean
+make all
+man malloc
+make all
+make all
+make all
+make all
+make all
+make all
+make all
+make all
+make all
+make all
+./mem_apis 
+ls
+cd ~/Projects/roper/
+ls
+cd doc
+l
+ls
+cd slides/
+ls
+mkdir SecDef
+ln -s ~/Projects/roper/doc/slides/SecDef/ ../SecDef/slides
+cd ..
+cd SecDef/
+ls
+cd slides/
+ls
+cd -
+ls
+cd ..
+cd slides/
+ls
+cp -r AtlSecCon/* SecDef/
+cd SecDef/
+ls
+mv atlseccon.tex secdef-slides.tex
+ls
+rm atlseccon.*
+ls
+find-file secdef-slides.tex 
+ls
+cd ..
+cd ..
+cd SecDef/
+ls
+rm roper_gecco_final.pdf 
+touch roper_gecco_final.pdf
+git rm roper_gecco_final.pdf
+git rm roper_gecco_final.pdf -f
+cd ~/Documents/GECCO/
+ls
+rm prep-notes.txt
+rm prep-notes.txt\~
+cd ~/Library/
+ls
+cd Phrack/
+ls
+grep -ri "smashing the stack for fun and profit"
+tree
+grep -r "smashing the stack" .
+ls
+cd 49
+ls
+grep "Aleph One" *
+find-file phrack.49.14.txt 
+evil-want-fine-undo
+(print _)
+(print evil-want-fine-undo)
+(print fine)
+(setq evil-want-fine-undo t)
+(print evil-want-fine-undo)
