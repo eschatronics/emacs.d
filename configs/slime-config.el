@@ -10,7 +10,8 @@
   (add-hook 'lisp-mode-hook
 	    (lambda ()
 	      (progn
-		(slime-mode t))))
+		(slime-mode t)
+		(push '(:eval (format "[%d]" (point))) mode-line-format))))
   
   (add-hook 'slime-mode-hook
 	    (lambda ()
@@ -23,9 +24,9 @@
   (global-set-key (kbd "C-,") 'slime-selector)
 
   (setq slime-lisp-implementations
-	'((ccl ("ccl"))
+	'(
 	  (sbcl ("sbcl"))
-	  
+	  (ccl ("ccl"))
 	  ))
   
   (setq slime-contribs '(slime-fancy)

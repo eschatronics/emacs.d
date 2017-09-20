@@ -85,6 +85,7 @@
 ;;; Use emacs' own eww browser for browsing the web
 (setq browse-url-browser-function 'eww-browse-url)
 
+(require 'mode-line-config)
 
 (show-paren-mode) ; highlight delimiters
 (line-number-mode) ; display line number in mode line
