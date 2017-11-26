@@ -25,7 +25,7 @@
 
   (setq slime-lisp-implementations
 	'(
-	  (sbcl ("sbcl"))
+	  (sbcl ("sbcl" "--dynamic-space-size" "4096"))
 	  (ccl ("ccl"))
 	  ))
   

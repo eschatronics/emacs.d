@@ -4,7 +4,10 @@
 (setq url-cookie-storage
  '((".google.com"
   [url-cookie "NID" "107=OHeFWHNNXKFCBwxPUaP9aExb2S6PtlH98vD1d73Wzb_yQ-MIl6mJRNGY7EnjUEExlObvud-4S5q8tc9XNeJwvuoDNUvd81Uu2ktunRUdeYgq50h8K7x9oaKJ_oB9lG57" "16-Jan-2018 10:28:24.00 GMT" "/" ".google.com" nil]
-  [url-cookie "HttpOnly" nil "16-Jan-2018 10:28:24.00 GMT" "/" ".google.com" nil]))
+  [url-cookie "HttpOnly" nil "16-Jan-2018 10:28:24.00 GMT" "/" ".google.com" nil])
+ (".youtube.com"
+  [url-cookie "VISITOR_INFO1_LIVE" "Cmjyv2EHmxs" "15-Jun-2018 09:56:32.00 GMT" "/" ".youtube.com" nil]
+  [url-cookie "PREF" "f1=40000000" "15-Jun-2018 09:56:32.00 GMT" "/" ".youtube.com" nil]))
 )
 (setq url-cookie-secure-storage
  'nil)

@@ -38,4 +38,6 @@
 (global-set-key (kbd "<left-margin> <drag-mouse-1>") 'mu-select-linum)
 
 (setq linum-format "%d ")
-(global-linum-mode 1)
+
+;; Linum mode, but only in programming language contexts
+(add-hook 'prog-mode-hook 'linum-mode)

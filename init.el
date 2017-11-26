@@ -16,7 +16,7 @@
     ("604648621aebec024d47c352b8e3411e63bdb384367c3dd2e8db39df81b475f5" default)))
  '(package-selected-packages
    (quote
-    (cider rust-playground rust-mode avy ranger swiper rainbow-mode org-edna badwolf-theme slime ivy which-key general evil use-package)))
+    (org-ref evil-paredit geiser auctex cider rust-playground rust-mode avy ranger swiper rainbow-mode org-edna badwolf-theme slime ivy which-key general evil use-package)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -109,6 +109,8 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (setq-default line-spacing 2) ;; little space between the lines
+
+
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
