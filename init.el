@@ -16,7 +16,7 @@
     ("604648621aebec024d47c352b8e3411e63bdb384367c3dd2e8db39df81b475f5" default)))
  '(package-selected-packages
    (quote
-    (org-ref evil-paredit geiser auctex cider rust-playground rust-mode avy ranger swiper rainbow-mode org-edna badwolf-theme slime ivy which-key general evil use-package)))
+    (ac-etags haskell-mode haskell-emacs evil-org org-ref evil-paredit geiser auctex cider rust-playground rust-mode avy ranger swiper rainbow-mode org-edna badwolf-theme slime ivy which-key general evil use-package)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -46,6 +46,15 @@
 		'undo-tree-visualize)
 	     )
 
+(use-package evil-org
+  :ensure t
+  :after org
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+	    (lambda ()
+	      (evil-org-set-key-theme)
+	      (evil-want-C-i-jump nil))))
 
 (use-package ivy :ensure t
   :diminish (ivy-mode . "") ; does not display ivy in the modeline
@@ -78,6 +87,20 @@
 (require 'nasl-mode)
 ;; for extra org stuff
 (require 'org-config)
+
+;; for kframework stuff
+(require 'k-mode)
+(require 'k3-mode)
+;; for gambit and gerbil scheme
+(autoload 'gerbil-mode "gerbil" "Gerbil editing mode." t)
+(require 'gambit)
+(add-hook 'inferior-scheme-mode-hook 'gambit-inferior-mode)
+
+(defvar gsi-options " -:tE8,f8,-8,h2097152")
+(defvar gerbil-program-name
+  (concat (expand-file-name "~/git/gerbil/bin/gxi")
+	  gsi-options))
+(setq scheme-program-name gerbil-program-name)
 
 (require 'hotkeys)
 
@@ -117,4 +140,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :foundry "ADBE" :slant normal :weight normal :height 101 :width normal)))))
+ '(default ((t (:family "Source Code Pro" :foundry "ADBE" :slant normal :weight normal :height 80 :width normal)))))

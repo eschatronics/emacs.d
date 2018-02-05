@@ -31,3 +31,9 @@
   
   (setq slime-contribs '(slime-fancy)
 	slime-startup-animation t))
+
+
+;;(add-to-list 'load-path "/usr/lib/chicken/8/") ;; where eggs are
+;;(autoload 'chicken-slime "chicken-slime" "SWANK backend for chicken" t)
+(add-hook 'scheme-mode-hook
+          (lambda () (slime-mode t)))
