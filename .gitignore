@@ -6,3 +6,7 @@ auto-save-list
 *.elc
 recentf
 *.bak
+tramp
+url/
+*.bak
+games/

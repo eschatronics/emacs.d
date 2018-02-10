@@ -16,7 +16,7 @@
     ("604648621aebec024d47c352b8e3411e63bdb384367c3dd2e8db39df81b475f5" default)))
  '(package-selected-packages
    (quote
-    (ac-etags haskell-mode haskell-emacs evil-org org-ref evil-paredit geiser auctex cider rust-playground rust-mode avy ranger swiper rainbow-mode org-edna badwolf-theme slime ivy which-key general evil use-package)))
+    (utop psysh tuareg caml sml-mode svg-clock ac-etags haskell-mode haskell-emacs evil-org org-ref evil-paredit geiser auctex cider rust-playground rust-mode avy ranger swiper rainbow-mode org-edna badwolf-theme slime ivy which-key general evil use-package)))
  '(show-paren-mode t)
  '(tool-bar-mode nil))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -91,11 +91,19 @@
 ;; for kframework stuff
 (require 'k-mode)
 (require 'k3-mode)
+
+;; Proof General
+(load "~/.emacs.d/lisp/PG/generic/proof-site")
+
+
 ;; for gambit and gerbil scheme
 (autoload 'gerbil-mode "gerbil" "Gerbil editing mode." t)
 (require 'gambit)
 (add-hook 'inferior-scheme-mode-hook 'gambit-inferior-mode)
 
+
+
+;; nixify!
 (defvar gsi-options " -:tE8,f8,-8,h2097152")
 (defvar gerbil-program-name
   (concat (expand-file-name "~/git/gerbil/bin/gxi")
@@ -109,6 +117,8 @@
 (setq browse-url-browser-function 'eww-browse-url)
 
 (require 'mode-line-config)
+
+(require 'tuareg-config)
 
 (show-paren-mode) ; highlight delimiters
 (line-number-mode) ; display line number in mode line
@@ -140,4 +150,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :foundry "ADBE" :slant normal :weight normal :height 80 :width normal)))))
+ '(default ((t (:family "Liberation Mono" :foundry "1ASC" :slant normal :weight normal :height 101 :width normal)))))
